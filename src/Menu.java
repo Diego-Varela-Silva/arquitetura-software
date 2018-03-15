@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Menu {
     private static ClienteRepository clienteRepository = new ClienteRepositoryImpl();
 
@@ -7,18 +9,12 @@ public class Menu {
     }
 
     public static void menu() {
-        String opcoes = "1 -> Inserir novo ciente\n";
-        opcoes +=       "2 -> Listar cientes";
-        opcoes +=       "0 -> Finalizar";
+        String opcoes = "\n\n\n1 -> Inserir novo ciente\n";
+        opcoes +=       "2 -> Listar cientes\n";
+        opcoes +=       "0 -> Finalizar\n";
+        System.out.println(opcoes);
         System.out.print("Escolha um opção: ");
     }
-
-    public static void novoCliente() {
-        Cliente cliente = new Cliente();
-        System.out.print("Nome: ");
-        cliente.setName(Teclado.getString());
-    }
-
 
     public static void selecionarOpcao(int opcao) {
         switch (opcao) {
@@ -32,8 +28,25 @@ public class Menu {
                 System.exit(0);
             default:
                 System.out.println("Opção inválida");
-                menu();
-
         }
     }
+
+    public static void novoCliente() {
+        System.out.println("\n\n\n");
+        Cliente cliente = new Cliente();
+        System.out.println("\nNovo Cliente");
+        System.out.print("Nome: ");
+        cliente.setName(Teclado.getString());
+        clienteRepository.save(cliente);
+    }
+
+    private static void listarClientes() {
+        System.out.println("\n\n\n");
+        List<Cliente> clientes = clienteRepository.getAll();
+        System.out.println("Lista de Clientes\n");
+        for (int i = 0; i < clientes.size(); i++) {
+            System.out.println("Cliente " + (i + 1) + ": " + clientes.get(i).getName());
+        }
+    }
+
 }
