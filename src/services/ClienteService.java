@@ -2,13 +2,16 @@ package services;
 
 import model.Cliente;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class ClienteService {
     public Collection<String> isValid(Cliente cliente) {
         ArrayList<String> erros = new ArrayList<>();
         if (cliente.getName().length() < 5) {
             erros.add("Nome menor que 5 caracteres.");
         }
-        if (cliente.getPais() == null || cliente.getPais() == "") {
+        if (cliente.getPais() == null || cliente.getPais().getNome() == "") {
             erros.add("País não pode ficar em branco.");
         }
         return erros;
