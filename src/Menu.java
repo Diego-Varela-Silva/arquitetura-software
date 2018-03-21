@@ -1,3 +1,6 @@
+import repository.interfaces.ClienteRepository;
+import repository.ClienteRepositoryImpl;
+
 import java.util.List;
 
 public class Menu {
