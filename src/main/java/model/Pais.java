@@ -3,6 +3,7 @@ package model;
 public class Pais {
     private String nome;
     private String sigla;
+    private int tamanhoTelefone;
 
     public String getNome() {
         return nome;
@@ -19,4 +20,18 @@ public class Pais {
     public void setSigla(String sigla) {
         this.sigla = sigla;
     }
+
+    public int getTamanhoTelefone() {
+        return tamanhoTelefone;
+    }
+
+    public void setTamanhoTelefone(int tamanhoTelefone) {
+        this.tamanhoTelefone = tamanhoTelefone;
+    }
+    
+    @Override
+    public String toString() {
+        return getNome() + "(" + this.getSigla() + ")\n";
+    }
+    
 }
