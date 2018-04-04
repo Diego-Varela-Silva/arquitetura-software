@@ -7,6 +7,16 @@ public class Cliente {
     private int idade;
     private Pais pais;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
+
     public String getNome() {
         return nome;
     }
