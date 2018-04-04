@@ -5,9 +5,12 @@
  */
 package interfaces;
 
+import dao.PaisDAO;
 import model.Cliente;
 import model.Pais;
 import repository.PaisRepository;
+
+import javax.swing.*;
 
 /**
  *
@@ -15,14 +18,14 @@ import repository.PaisRepository;
  */
 public class CadastroPaises extends javax.swing.JFrame {
     
-    private PaisRepository repository;
+    private PaisDAO paisDAO;
 
     /**
      * Creates new form CadastroPaises
      */
     public CadastroPaises() {
         initComponents();
-       this.repository = new PaisRepository();
+       this.paisDAO = new PaisDAO();
     }
 
     /**
@@ -146,7 +149,11 @@ public class CadastroPaises extends javax.swing.JFrame {
         pais.setNome(textNomePais.getText());
         pais.setSigla(textSiglaPais.getText());
         pais.setTamanhoTelefone(new Integer(spinnerTamanhoTelefonePais.getValue().toString()));
-        repository.save(pais);
+        try {
+            paisDAO.criar(pais);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }//GEN-LAST:event_buttonSalvarPaisesActionPerformed
 
     private void buttonCancelarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarPaisActionPerformed

@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import dao.PaisDAO;
+import java.util.List;
 import java.util.Set;
 import model.Cliente;
 import model.Pais;
@@ -16,7 +18,7 @@ import repository.PaisRepository;
  */
 public class CadastroCLiente extends javax.swing.JFrame {
 
-    private PaisRepository repository;
+    private PaisDAO paisDao;
     private Set<Pais> pais;
     
     /**
@@ -24,8 +26,10 @@ public class CadastroCLiente extends javax.swing.JFrame {
      */
     public CadastroCLiente() {
         initComponents();
-        repository =  new PaisRepository();
-        pais = (Set<Pais>) repository.getAll();
+        paisDao = new PaisDAO();
+        List<Pais> paises = paisDao.ler();
+        
+        paises.for
     }
 
     /**
@@ -159,7 +163,7 @@ public class CadastroCLiente extends javax.swing.JFrame {
 
     private void buttonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvarActionPerformed
         // TODO add your handling code here:
-        Cliente cliente =  new Cliente();
+        Cliente cliente = new Cliente();
     }//GEN-LAST:event_buttonSalvarActionPerformed
 
     private void comboPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPaisActionPerformed

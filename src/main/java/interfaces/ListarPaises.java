@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import dao.PaisDAO;
 import repository.PaisRepository;
 
 /**
@@ -18,7 +19,7 @@ public class ListarPaises extends javax.swing.JFrame {
      */
     public ListarPaises() {
         initComponents();
-        jTextPanePaises.setText(new PaisRepository().getAll().toString());
+        jTextPanePaises.setText(new PaisDAO().ler().toString());
     }
 
     /**

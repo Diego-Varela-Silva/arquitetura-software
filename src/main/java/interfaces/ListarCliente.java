@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import dao.ClienteDAO;
 import repository.ClienteRepository;
 
 /**
@@ -18,7 +19,7 @@ public class ListarCliente extends javax.swing.JFrame {
      */
     public ListarCliente() {
         initComponents();
-        jTextPaneClientes.setText(new ClienteRepository().getAll().toString());
+        jTextPaneClientes.setText(new ClienteDAO().ler().toString());
     }
 
     /**
