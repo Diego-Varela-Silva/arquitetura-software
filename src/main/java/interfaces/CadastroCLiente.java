@@ -179,7 +179,6 @@ public class CadastroCLiente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvarActionPerformed
-        // TODO add your handling code here:
         Cliente cliente = new Cliente();
         try {
             cliente.setNome(textNome.getText());

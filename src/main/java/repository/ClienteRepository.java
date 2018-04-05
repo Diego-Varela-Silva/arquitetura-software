@@ -14,11 +14,7 @@ public class ClienteRepository {
     private static final Set<Cliente> clientes = new HashSet<>();
 
     public void save(Cliente cliente) throws Exception {
-        if (clientes.size() == 0) {
-            cliente.setId(1);
-        } else {
-            cliente.setId(clientes.size() + 1);
-        }
+        cliente.setId(clientes.size() + 1);
         if (!clientes.add(cliente)) {
             throw new Exception("Cliente já existe!");
         }

@@ -41,6 +41,11 @@ public class ListarCliente extends javax.swing.JFrame {
         jLabel1.setText("Lista de Clientes");
 
         buttonVoltarListaCliente.setText("Voltar");
+        buttonVoltarListaCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonVoltarListaClienteActionPerformed(evt);
+            }
+        });
 
         jScrollPane2.setViewportView(jTextPaneClientes);
 
@@ -78,6 +83,11 @@ public class ListarCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonVoltarListaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltarListaClienteActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_buttonVoltarListaClienteActionPerformed
 
     /**
      * @param args the command line arguments
