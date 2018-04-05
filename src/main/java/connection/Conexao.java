@@ -14,14 +14,14 @@ public class Conexao {
             conexao = DriverManager
                     .getConnection(
                             "jdbc:postgresql://localhost:5432/arquitetura-software",
-                            "diego",
-                            "123456");
+                            "arquitetura-software",
+                            "arquitetura-software");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    static PreparedStatement getPreparedStatement(String sql) throws SQLException {
+    public static PreparedStatement getPreparedStatement(String sql) throws SQLException {
         return conexao.prepareStatement(sql);
     }
 
