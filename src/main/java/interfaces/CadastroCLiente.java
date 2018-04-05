@@ -5,10 +5,14 @@
  */
 package interfaces;
 
+import dao.ClienteDAO;
 import dao.PaisDAO;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import model.Cliente;
 import model.Pais;
 import repository.PaisRepository;
@@ -20,6 +24,7 @@ import repository.PaisRepository;
 public class CadastroCLiente extends javax.swing.JFrame {
 
     private PaisDAO paisDao;
+    private ClienteDAO clienteDao;
     private Set<Pais> pais;
     
     /**
@@ -28,6 +33,7 @@ public class CadastroCLiente extends javax.swing.JFrame {
     public CadastroCLiente() {
         initComponents();
         paisDao = new PaisDAO();
+        clienteDao = new ClienteDAO();
         List<Pais> paises = paisDao.ler();
         
         addPaisToComboBox(paises.toArray());
@@ -175,6 +181,16 @@ public class CadastroCLiente extends javax.swing.JFrame {
     private void buttonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSalvarActionPerformed
         // TODO add your handling code here:
         Cliente cliente = new Cliente();
+        try {
+            cliente.setNome(textNome.getText());
+            cliente.setPais((Pais) comboPais.getSelectedItem());
+            cliente.setTelefone(textTelefone.getText());
+            cliente.setIdade(new Integer(spinnerIdade.getValue().toString()));
+            clienteDao.criar(cliente);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+        
     }//GEN-LAST:event_buttonSalvarActionPerformed
 
     private void comboPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPaisActionPerformed

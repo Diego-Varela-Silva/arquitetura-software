@@ -62,7 +62,7 @@ public class Cliente {
         return limiteCredito;
     }
 
-    public void setLimiteCredito(double limiteCredito) {
+    private void setLimiteCredito(double limiteCredito) {
         this.limiteCredito = limiteCredito;
     }
 
