@@ -9,13 +9,10 @@ import dao.ClienteDAO;
 import dao.PaisDAO;
 import java.util.List;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import model.Cliente;
 import model.Pais;
-import repository.PaisRepository;
 
 /**
  *

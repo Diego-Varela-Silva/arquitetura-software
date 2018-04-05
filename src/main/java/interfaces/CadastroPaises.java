@@ -6,9 +6,7 @@
 package interfaces;
 
 import dao.PaisDAO;
-import model.Cliente;
 import model.Pais;
-import repository.PaisRepository;
 
 import javax.swing.*;
 

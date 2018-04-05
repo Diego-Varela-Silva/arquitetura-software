@@ -6,7 +6,6 @@
 package interfaces;
 
 import dao.ClienteDAO;
-import repository.ClienteRepository;
 
 /**
  *
