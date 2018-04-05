@@ -8,6 +8,7 @@ package interfaces;
 import dao.PaisDAO;
 import java.util.List;
 import java.util.Set;
+import javax.swing.DefaultComboBoxModel;
 import model.Cliente;
 import model.Pais;
 import repository.PaisRepository;
@@ -29,7 +30,12 @@ public class CadastroCLiente extends javax.swing.JFrame {
         paisDao = new PaisDAO();
         List<Pais> paises = paisDao.ler();
         
-        paises.for
+        addPaisToComboBox(paises.toArray());
+    }
+    
+    public void addPaisToComboBox(Object[] paises) {
+        DefaultComboBoxModel model = new DefaultComboBoxModel(paises);
+        comboPais.setModel(model);
     }
 
     /**
@@ -81,6 +87,11 @@ public class CadastroCLiente extends javax.swing.JFrame {
         });
 
         buttonCadastrarPais.setText("Cadastrar País");
+        buttonCadastrarPais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCadastrarPaisActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Telefone:");
 
@@ -178,6 +189,10 @@ public class CadastroCLiente extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void buttonCadastrarPaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadastrarPaisActionPerformed
+        new CadastroPaises().setVisible(true);
+    }//GEN-LAST:event_buttonCadastrarPaisActionPerformed
 
     /**
      * @param args the command line arguments
