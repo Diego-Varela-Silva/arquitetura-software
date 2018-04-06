@@ -7,8 +7,19 @@ public class Cliente {
     private int idade;
     private Pais pais;
 
+    public Cliente() { }
+
     public int getId() {
         return id;
+    }
+
+    public Cliente(int id, String nome, String telefone, double limiteCredito, int idade, Pais pais) {
+        this.id = id;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.limiteCredito = limiteCredito;
+        this.idade = idade;
+        this.pais = pais;
     }
 
     public void setId(int id) {

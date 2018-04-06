@@ -38,6 +38,16 @@ public class Pais {
         this.id = id;
     }
 
+    public Pais(int id, String nome, String sigla, int tamanhoTelefone) {
+        this();
+        this.nome = nome;
+        this.sigla = sigla;
+        this.tamanhoTelefone = tamanhoTelefone;
+        this.id = id;
+    }
+
+    public Pais() { }
+
     @Override
     public String toString() {
         return getNome() + "(" + this.getSigla() + ")\n";
